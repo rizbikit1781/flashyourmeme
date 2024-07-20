@@ -3,13 +3,12 @@
 }
 
 <div class="container mt-4">
-    <h1 class="display-4 text-center mb-4">Dashboard</h1>
+    <h1 class="display-4 text-center mb-4 fw-bold">@ViewData["Title"]</h1>
 
     <div class="row mb-4">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Filter Options</h5>
                     <form>
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -29,7 +28,7 @@
                                     <option value="3">Branch 3</option>
                                 </select>
                             </div>
-                            <div class="col-md-2 d-flex align-items-end">
+                            <div class="col-md-2 d-flex align-items-center mt-3">
                                 <button type="submit" class="btn btn-primary w-100">Apply Filter</button>
                             </div>
                         </div>
@@ -39,16 +38,16 @@
         </div>
     </div>
 
-    <!-- Dashboard content -->
+    <!-- Placeholder for dashboard content -->
     <div class="row">
-        <div class="col-md-8 mb-4">
+        <div class="col-md-6 mb-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Sales Overview</h5>
                     <p class="card-text">Sales data will be displayed here.</p>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <div class="card bg-primary text-white mt-10">
+                            <div class="card card-content text-white">
                                 <div class="card-body">
                                     <h6 class="card-subtitle mb-2">Total Orders</h6>
                                     <h2 class="card-text" id="totalOrders">0</h2>
@@ -56,7 +55,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <div class="card bg-success text-white mt-10">
+                            <div class="card card-content text-white">
                                 <div class="card-body">
                                     <h6 class="card-subtitle mb-2">Total Revenue</h6>
                                     <h2 class="card-text" id="totalRevenue">$0</h2>
@@ -67,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-6 mb-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Unsuccessful Print</h5>
@@ -78,6 +77,8 @@
                 </div>
             </div>
         </div>
+
+
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="card">
@@ -88,77 +89,46 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
 
 @section Scripts {
     <script>
         $(document).ready(function () {
-            // Set default dates (same as before)
+            // Set default dates
+            var today = new Date();
+            var lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
 
-            let ordersByBranchChart;
+            $('#startDate').val(lastMonth.toISOString().split('T')[0]);
+            $('#endDate').val(today.toISOString().split('T')[0]);
 
+            // Function to update dashboard data
             function updateDashboard(startDate, endDate, branch) {
-                // Update Total Orders and Total Revenue (same as before)
+                // This is where you would typically make an AJAX call to your server
+                // For demonstration, we'll use dummy data
 
-                // Update Unsuccessful Print list (same as before)
+                // Update Total Orders
+                $('#totalOrders').text('1,234');
 
-                // Update Orders by Branch Chart
-                updateOrdersByBranchChart();
-            }
+                // Update Total Revenue
+                $('#totalRevenue').text('$45,678');
 
-            function updateOrdersByBranchChart() {
-                // Dummy data - replace this with actual data from your server
-                const branchData = {
-                    labels: ['Branch 1', 'Branch 2', 'Branch 3', 'Branch 4', 'Branch 5'],
-                    datasets: [{
-                        label: 'Number of Orders',
-                        data: [65, 59, 80, 81, 56],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                };
+                // Update Unsuccessful Print list
+                var unsuccessfulPrints = [
+                    { id: 1, reason: "Paper jam", date: "2023-07-15" },
+                    { id: 2, reason: "Ink shortage", date: "2023-07-16" },
+                    { id: 3, reason: "Power outage", date: "2023-07-17" }
+                ];
 
-                if (ordersByBranchChart) {
-                    ordersByBranchChart.data = branchData;
-                    ordersByBranchChart.update();
-                } else {
-                    const ctx = document.getElementById('ordersByBranchChart').getContext('2d');
-                    ordersByBranchChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: branchData,
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            },
-                            responsive: true,
-                            plugins: {
-                                legend: {
-                                    position: 'top',
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Orders by Branch'
-                                }
-                            }
-                        }
-                    });
-                }
+                var $list = $('#unsuccessfulPrintList');
+                $list.empty();
+                unsuccessfulPrints.forEach(function (print) {
+                    $list.append(`<li class="list-group-item">
+                                <strong>ID: ${print.id}</strong> - ${print.reason} (${print.date})
+                            </li>`);
+                });
             }
 
             // Initial update
@@ -169,7 +139,11 @@
                 e.preventDefault();
                 updateDashboard($('#startDate').val(), $('#endDate').val(), $('#branch').val());
             });
+
+
+            let ordersByBranchChart;
+
+
         });
     </script>
-}
 }

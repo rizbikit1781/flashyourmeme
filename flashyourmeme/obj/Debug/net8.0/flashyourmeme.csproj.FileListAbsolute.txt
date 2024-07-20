@@ -100,3 +100,4 @@ D:\flashyourmeme\flashyourmeme\flashyourmeme\obj\Debug\net8.0\refint\flashyourme
 D:\flashyourmeme\flashyourmeme\flashyourmeme\obj\Debug\net8.0\flashyourmeme.pdb
 D:\flashyourmeme\flashyourmeme\flashyourmeme\obj\Debug\net8.0\flashyourmeme.genruntimeconfig.cache
 D:\flashyourmeme\flashyourmeme\flashyourmeme\obj\Debug\net8.0\ref\flashyourmeme.dll
+D:\flashyourmeme\flashyourmeme\flashyourmeme\obj\Debug\net8.0\flashyourmeme.sourcelink.json

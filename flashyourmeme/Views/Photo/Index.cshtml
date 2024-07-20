@@ -1,0 +1,112 @@
+﻿@model flashyourmeme.Models.PhotoViewModel
+
+@{
+    ViewData["Title"] = "Photo Storage";
+}
+
+<div class="container mt-4">
+    <h1 class="display-4 text-center mb-4 fw-bold">@ViewData["Title"]</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="startDate" class="form-label">Start Date</label>
+                                <input type="date" class="form-control" id="startDate" name="startDate">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="endDate" class="form-label">End Date</label>
+                                <input type="date" class="form-control" id="endDate" name="endDate">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="branch" class="form-label">Branch</label>
+                                <select class="form-select" id="branch" name="branch">
+                                    <option selected>Select Branch</option>
+                                    <option value="1">Branch 1</option>
+                                    <option value="2">Branch 2</option>
+                                    <option value="3">Branch 3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 d-flex align-items-center mt-3">
+                                <button type="submit" class="btn btn-primary w-100">Apply Filter</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Branch</th>
+                                <th scope="col">Management</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var photo in Model.Photos)
+                            {
+                                <tr>
+                                    <td>@photo.Date.ToShortDateString()</td>
+                                    <td>@photo.Time.ToString(@"hh\:mm")</td>
+                                    <td>@photo.Branch</td>
+                                    <td>
+                                        <a href="@photo.PreviewUrl" class="btn btn-secondary btn-sm">Preview</a>
+                                        <button class="btn btn-secondary btn-sm" onclick="copyLink('@photo.LinkUrl')">Copy Link</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            @if (Model.Pagination.CurrentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@(Model.Pagination.CurrentPage - 1)">Previous</a>
+                                </li>
+                            }
+                            @for (int i = 1; i <= Model.Pagination.TotalPages; i++)
+                            {
+                                <li class="page-item @(Model.Pagination.CurrentPage == i ? "active" : "")">
+                                    <a class="page-link" href="?page=@i">@i</a>
+                                </li>
+                            }
+                            @if (Model.Pagination.CurrentPage < Model.Pagination.TotalPages)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@(Model.Pagination.CurrentPage + 1)">Next</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyLink(link) {
+        navigator.clipboard.writeText(link).then(function () {
+            alert('Link copied to clipboard');
+        }, function (err) {
+            console.error('Could not copy link: ', err);
+        });
+    }
+</script>

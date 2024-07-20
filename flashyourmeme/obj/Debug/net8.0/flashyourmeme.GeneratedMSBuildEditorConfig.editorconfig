@@ -30,16 +30,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/flashyourmeme/flashyourmeme/flashyourmeme/Views/Home/Photo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQaG90by5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/flashyourmeme/flashyourmeme/flashyourmeme/Views/Home/Template.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZW1wbGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/flashyourmeme/flashyourmeme/flashyourmeme/Views/Home/Voucher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWb3VjaGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/flashyourmeme/flashyourmeme/flashyourmeme/Views/Photo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhvdG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/flashyourmeme/flashyourmeme/flashyourmeme/Views/Shared/Error.cshtml]
