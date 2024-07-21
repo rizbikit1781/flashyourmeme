@@ -25,8 +25,24 @@ namespace flashyourmeme.Controllers
 
         public IActionResult Template()
         {
-            return View();
+            var images = new List<ImageModel>
+        {
+            new ImageModel { Id = 1, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 1", File ="4x6-1" },
+            new ImageModel { Id = 2, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 2", File ="4x6-1" },
+            new ImageModel { Id = 3, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 3", File ="4x6-1" },
+            new ImageModel { Id = 4, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 4", File ="4x6-1" },
+            new ImageModel { Id = 5, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 5", File ="4x6-1" },
+            new ImageModel { Id = 6, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 6", File ="4x6-1" },
+            new ImageModel { Id = 7, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 7", File ="4x6-1" },
+            new ImageModel { Id = 8, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 8", File ="4x6-1" },
+            new ImageModel { Id = 9, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 9", File ="4x6-1" },
+            new ImageModel { Id = 10, ImageUrl = "https://www.svgrepo.com/show/508699/landscape-placeholder.svg", Title = "Image 10", File ="4x6-1" },
+           
+        };
+
+            return View(images);
         }
+    
 
         public IActionResult Filter()
         {

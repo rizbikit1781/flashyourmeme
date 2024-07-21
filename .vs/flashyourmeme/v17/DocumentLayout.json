@@ -3,44 +3,20 @@
   "WorkspaceRootPath": "D:\\flashyourmeme\\flashyourmeme\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\views\\photo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\views\\photo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\views\\home\\template.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\views\\home\\template.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\models\\photomodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\models\\photomodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\models\\imagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\models\\imagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\models\\photoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\models\\photoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\views\\home\\filter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\views\\home\\filter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|d:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE356850-B784-4D36-B095-D64A69B3A1AA}|flashyourmeme\\flashyourmeme.csproj|solutionrelative:flashyourmeme\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,97 +26,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Program.cs",
-              "RelativeDocumentMoniker": "flashyourmeme\\Program.cs",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Program.cs",
-              "RelativeToolTip": "flashyourmeme\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T08:32:57.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "flashyourmeme\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "flashyourmeme\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABPAAAA",
+              "Title": "Template.cshtml",
+              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Home\\Template.cshtml",
+              "RelativeDocumentMoniker": "flashyourmeme\\Views\\Home\\Template.cshtml",
+              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Home\\Template.cshtml",
+              "RelativeToolTip": "flashyourmeme\\Views\\Home\\Template.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAqwDYAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-20T08:23:43.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PhotoViewModel.cs",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Models\\PhotoViewModel.cs",
-              "RelativeDocumentMoniker": "flashyourmeme\\Models\\PhotoViewModel.cs",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Models\\PhotoViewModel.cs",
-              "RelativeToolTip": "flashyourmeme\\Models\\PhotoViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T08:15:49.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PhotoModels.cs",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Models\\PhotoModels.cs",
-              "RelativeDocumentMoniker": "flashyourmeme\\Models\\PhotoModels.cs",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Models\\PhotoModels.cs",
-              "RelativeToolTip": "flashyourmeme\\Models\\PhotoModels.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T08:14:06.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Filter.cshtml",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Home\\Filter.cshtml",
-              "RelativeDocumentMoniker": "flashyourmeme\\Views\\Home\\Filter.cshtml",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Home\\Filter.cshtml",
-              "RelativeToolTip": "flashyourmeme\\Views\\Home\\Filter.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-20T08:12:32.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PhotoController.cs",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\PhotoController.cs",
-              "RelativeDocumentMoniker": "flashyourmeme\\Controllers\\PhotoController.cs",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\PhotoController.cs",
-              "RelativeToolTip": "flashyourmeme\\Controllers\\PhotoController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T08:06:18.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "flashyourmeme\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "flashyourmeme\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-20T08:03:01.08Z",
+              "WhenOpened": "2024-07-21T07:54:32.973Z",
               "EditorCaption": ""
             },
             {
@@ -149,41 +47,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "flashyourmeme\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "flashyourmeme\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAABAAAA",
+              "DocumentIndex": 3,
+              "Title": "PhotoController.cs",
+              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\PhotoController.cs",
+              "RelativeDocumentMoniker": "flashyourmeme\\Controllers\\PhotoController.cs",
+              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\PhotoController.cs",
+              "RelativeToolTip": "flashyourmeme\\Controllers\\PhotoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T08:00:50.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "flashyourmeme\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "flashyourmeme\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABgAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-20T07:05:38.735Z",
+              "WhenOpened": "2024-07-21T07:53:22.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Photo\\Index.cshtml",
-              "RelativeDocumentMoniker": "flashyourmeme\\Views\\Photo\\Index.cshtml",
-              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Views\\Photo\\Index.cshtml",
-              "RelativeToolTip": "flashyourmeme\\Views\\Photo\\Index.cshtml",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAwwF4AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-19T21:44:04.489Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "flashyourmeme\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "flashyourmeme\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA1wCYAAACTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T07:52:56.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ImageModel.cs",
+              "DocumentMoniker": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Models\\ImageModel.cs",
+              "RelativeDocumentMoniker": "flashyourmeme\\Models\\ImageModel.cs",
+              "ToolTip": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\Models\\ImageModel.cs",
+              "RelativeToolTip": "flashyourmeme\\Models\\ImageModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T07:51:39.393Z",
               "EditorCaption": ""
             }
           ]

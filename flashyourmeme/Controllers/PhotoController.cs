@@ -12,7 +12,7 @@ namespace flashyourmeme.Controllers
         {
             // Mock data
             var photos = new List<Photo>();
-            for (int i = 1; i <= 100; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 photos.Add(new Photo
                 {
