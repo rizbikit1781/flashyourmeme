@@ -57,9 +57,11 @@
                             <div class="card">
                                 <img src="@Url.Content(image.ImageUrl)" class="card-img-top" alt="@image.Title">
                                 <div class="card-body text-center">
-                                    <p>Set name: @image.Title</p>
+                                    <div class="text-start">
+                                    <h6>Set name: @image.Title</h6>
                                     <p>File: @image.File</p>
-                                    <button class="btn btn-primary me-2">Edit</button>
+                                    </div>
+                                    <button class="btn btn-dark me-2">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
                                 </div>
                             </div>

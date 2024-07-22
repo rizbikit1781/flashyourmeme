@@ -42,12 +42,12 @@ namespace flashyourmeme.Controllers
 
             return View(images);
         }
-    
 
-        public IActionResult Filter()
+
+        /*public IActionResult Filter()
         {
             return View();
-        }
+        }*/
 
         public IActionResult Voucher()
         {
