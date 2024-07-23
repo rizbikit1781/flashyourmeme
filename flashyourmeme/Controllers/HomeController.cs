@@ -44,21 +44,6 @@ namespace flashyourmeme.Controllers
         }
 
 
-        /*public IActionResult Filter()
-        {
-            return View();
-        }*/
-
-        public IActionResult Voucher()
-        {
-            return View();
-        }
-
-        public IActionResult Branch()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

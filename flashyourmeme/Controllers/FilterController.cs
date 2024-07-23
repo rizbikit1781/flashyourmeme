@@ -2,13 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
-[Route("filters")]
 public class FilterController : Controller
 {
-    private const int PageSize = 6;
-
-    [HttpGet("")]
-    public IActionResult Index(int page = 1)
+    public IActionResult Index(int page = 1, int pageSize = 6)
     {
         var filters = new List<FilterModel>
         {
@@ -23,8 +19,8 @@ public class FilterController : Controller
             // Add more filter models here
         };
 
-        var paginatedFilters = filters.Skip((page - 1) * PageSize).Take(PageSize).ToList();
-        var totalPages = (int)Math.Ceiling(filters.Count / (double)PageSize);
+        var paginatedFilters = filters.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+        var totalPages = (int)Math.Ceiling(filters.Count / (double)pageSize);
 
         var viewModel = new FilterViewModel
         {
