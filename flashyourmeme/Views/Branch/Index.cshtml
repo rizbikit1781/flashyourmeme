@@ -4,7 +4,7 @@
     ViewData["Title"] = "Branch Management";
 }
 <div class="container mt-4 min-vh-100 template-overview">
-    <h1 class="display-4 text-center mb-4 fw-bold text-primary">@ViewData["Title"]</h1>
+    <h1 class="display-4 text-center mb-4 fw-bold">@ViewData["Title"]</h1>
     
     <div class="card">
         <div class="card-body text-center">
@@ -17,7 +17,7 @@
                         <th class="align-content-center"><button type="submit" class="btn btn-outline-dark w-45"><i class="fa-solid fa-plus"></i>Add New Branch</button></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="align-middle">
                     @if (Model.Branches != null && Model.Branches.Any())
                     {
                         foreach (var item in Model.Branches)

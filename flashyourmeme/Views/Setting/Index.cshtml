@@ -1,30 +1,98 @@
 ﻿@{
     ViewData["Title"] = "Display Setting";
+
+    var tabs = new List<(string Id, string Title)>
+    {
+        ("home", "Home"),
+        ("paynow", "Pay Now"),
+        ("payment", "Payment"),
+        ("successfull", "Successful"),
+        ("template", "Choose Template"),
+        ("picture", "Take Picture"),
+        ("colormode", "Color Mode"),
+        ("scan", "Scan")
+    };
 }
 <div class="container mt-4 min-vh-100">
     <h1 class="display-4 text-center mb-4 fw-bold">@ViewData["Title"]</h1>
     <div class="card">
-        <div class="card-body">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
-                </li>
+        <div class="card-body min-vh-100">
+            <ul class="nav nav-pills nav-fill mb-3 text-black" id="pills-tab" role="tablist">
+                @foreach (var tab in tabs)
+                {
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link @(tab.Id == "home" ? "active active-tab" : "")" id="pills-@tab.Id-tab" data-bs-toggle="pill" data-bs-target="#pills-@tab.Id" type="button" role="tab" aria-controls="pills-@tab.Id" aria-selected="false">@tab.Title</button>
+                    </li>
+                }
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-md-4 text-center preview-display">
+                            <h3 class="mt-4">Preview Picture</h3>
+                            <img id="preview" src="#" alt="Your Image" style="display:none; max-width: 100%;" />
+                            <p id="image-size" style="display:none;"></p>
+                            
+                        </div>
+                        <div class="col-md-6 upload-options">
+                            <h4>1.Background</h4>
+                            <input type="file" id="upload" accept="image/*" />
+                            <img id="background-preview" src="#" alt="Background Image" style="display:none; max-width: 100%; margin-top: 20px;" />
+                            <p id="image-dimensions" style="display:none; margin-top: 10px;"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-paynow" role="tabpanel" aria-labelledby="pills-paynow-tab" tabindex="0">Pay Now</div>
+                <div class="tab-pane fade" id="pills-payment" role="tabpanel" aria-labelledby="pills-payment-tab" tabindex="0">Payment</div>
+                <div class="tab-pane fade" id="pills-successfull" role="tabpanel" aria-labelledby="pills-successfull-tab" tabindex="0">Successful</div>
+                <div class="tab-pane fade" id="pills-template" role="tabpanel" aria-labelledby="pills-template-tab" tabindex="0">Choose Template</div>
+                <div class="tab-pane fade" id="pills-picture" role="tabpanel" aria-labelledby="pills-picture-tab" tabindex="0">Take Picture</div>
+                <div class="tab-pane fade" id="pills-colormode" role="tabpanel" aria-labelledby="pills-colormode-tab" tabindex="0">Color Mode</div>
+                <div class="tab-pane fade" id="pills-scan" role="tabpanel" aria-labelledby="pills-scan-tab" tabindex="0">Scan</div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tabButtons = document.querySelectorAll('#pills-tab button');
+
+        tabButtons.forEach(function (button) {
+            button.addEventListener('show.bs.tab', function (event) {
+                tabButtons.forEach(function (btn) {
+                    btn.classList.remove('active-tab');
+                });
+                event.target.classList.add('active-tab');
+            });
+        });
+
+        document.getElementById('upload').addEventListener('change', function (event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var img = document.getElementById('preview');
+                img.src = reader.result;
+                img.style.display = 'block';
+
+                var imageSize = document.getElementById('image-size');
+                var file = event.target.files[0];
+                var sizeInKB = (file.size / 1024).toFixed(2);
+                imageSize.textContent = "Size: " + sizeInKB + " KB";
+                imageSize.style.display = 'block';
+
+                var imageDimensions = document.getElementById('image-dimensions');
+                var tempImg = new Image();
+                tempImg.onload = function () {
+                    var width = tempImg.width;
+                    var height = tempImg.height;
+                    imageDimensions.textContent = "Dimensions: " + width + " x " + height;
+                    imageDimensions.style.display = 'block';
+                };
+                tempImg.src = reader.result;
+            }
+            if (event.target.files.length > 0) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        });
+    });
+</script>
