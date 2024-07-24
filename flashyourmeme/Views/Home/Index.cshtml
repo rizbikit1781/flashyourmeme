@@ -2,7 +2,7 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<div class="container mt-4">
+<div class="container mt-4 min-vh-100 ">
     <h1 class="display-4 text-center mb-4 fw-bold">@ViewData["Title"]</h1>
 
     <div class="row mb-4">
@@ -77,45 +77,136 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="row mt-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Orders by Branch</h5>
-                        <canvas id="ordersByBranchChart"></canvas>
-                    </div>
-                </div>
-            </div>
+
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <canvas id="ordersChart" width="400" height="150"></canvas>
         </div>
+    </div>
 
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-6">
 
+            <div class="progress mb-4" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 10%">10%</div>
+            </div>
+                <div class="progress mb-4" role="progressbar" aria-label="Success striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" style="width: 25%">25%</div>
+            </div>
+                <div class="progress mb-4" role="progressbar" aria-label="Info striped example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" style="width: 50%">50%</div>
+            </div>
+                <div class="progress mb-4" role="progressbar" aria-label="Warning striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" style="width: 75%">75%</div>
+            </div>
+                <div class="progress mb-4" role="progressbar" aria-label="Danger striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" style="width: 100%">100%</div>
+            </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
 @section Scripts {
     <script>
         $(document).ready(function () {
-            // Set default dates
             var today = new Date();
             var lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
 
             $('#startDate').val(lastMonth.toISOString().split('T')[0]);
             $('#endDate').val(today.toISOString().split('T')[0]);
 
-            // Function to update dashboard data
+            // Chart.js initialization
+            var ctx = document.getElementById('ordersChart').getContext('2d');
+            var ordersChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [], // Dates will be populated here
+                    datasets: [
+                        {
+                            label: 'Branch 1',
+                            data: [], // Branch 1 orders will be populated here
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Branch 2',
+                            data: [], // Branch 2 orders will be populated here
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Branch 3',
+                            data: [], // Branch 3 orders will be populated here
+                            backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        },
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    }
+                }
+            });
+
             function updateDashboard(startDate, endDate, branch) {
-                // This is where you would typically make an AJAX call to your server
-                // For demonstration, we'll use dummy data
+                // Dummy data for demonstration
+                var salesData = [
+                    { date: "1", branch1: 100, branch2: 50, branch3: 30 },
+                    { date: "2", branch1: 150, branch2: 70, branch3: 60 },
+                    { date: "3", branch1: 200, branch2: 80, branch3: 90 },
+                    { date: "4", branch1: 175, branch2: 90, branch3: 40 },
+                    { date: "5", branch1: 150, branch2: 60, branch3: 20 },
+                    { date: "6", branch1: 80, branch2: 60, branch3: 45 },
+                    { date: "7", branch1: 160, branch2: 60, branch3: 55 },
+                    { date: "8", branch1: 100, branch2: 60, branch3: 60 },
+                    { date: "9", branch1: 90, branch2: 60, branch3: 70 },
+                    { date: "10", branch1: 30, branch2: 60, branch3: 45 },
+                    { date: "11", branch1: 120, branch2: 60, branch3: 37 },
+                    { date: "12", branch1: 50, branch2: 60, branch3: 45 },
+                    { date: "13", branch1: 40, branch2: 60, branch3: 78 },
+                    { date: "14", branch1: 55, branch2: 60, branch3: 12 },
+                    { date: "15", branch1: 165, branch2: 60, branch3: 60 },
+                    { date: "16", branch1: 180, branch2: 60, branch3: 80 },
+                    { date: "17", branch1: 90, branch2: 60, branch3: 72 },
+                    { date: "18", branch1: 60, branch2: 60, branch3: 58 },
+                    { date: "19", branch1: 70, branch2: 60, branch3: 75 },
+                    { date: "20", branch1: 30, branch2: 60, branch3: 35 },
+                    { date: "21", branch1: 50, branch2: 60, branch3: 49 },
+                    { date: "22", branch1: 60, branch2: 60, branch3: 85 },
+                    { date: "23", branch1: 70, branch2: 60, branch3: 40 },
+                    { date: "24", branch1: 50, branch2: 60, branch3: 58 },
+                    { date: "25", branch1: 70, branch2: 60, branch3: 75 },
+                    { date: "26", branch1: 90, branch2: 60, branch3: 60 },
+                    { date: "27", branch1: 30, branch2: 60, branch3: 80 },
+                    { date: "28", branch1: 50, branch2: 60, branch3: 52 },
+                    { date: "29", branch1: 70, branch2: 60, branch3: 77 },
+                    { date: "30", branch1: 87, branch2: 60, branch3: 88 },
+                    { date: "31", branch1: 75, branch2: 60, branch3: 78 },
+                ];
 
-                // Update Total Orders
+                // Update orders and revenue text
                 $('#totalOrders').text('1,234');
-
-                // Update Total Revenue
                 $('#totalRevenue').text('$45,678');
 
-                // Update Unsuccessful Print list
+                // Update unsuccessful prints list
                 var unsuccessfulPrints = [
                     { id: 1, reason: "Paper jam", date: "2023-07-15" },
                     { id: 2, reason: "Ink shortage", date: "2023-07-16" },
@@ -126,24 +217,29 @@
                 $list.empty();
                 unsuccessfulPrints.forEach(function (print) {
                     $list.append(`<li class="list-group-item">
-                                <strong>ID: ${print.id}</strong> - ${print.reason} (${print.date})
-                            </li>`);
+                                        <strong>ID: ${print.id}</strong> - ${print.reason} (${print.date})
+                                    </li>`);
                 });
+
+                // Update chart with sales data
+                var labels = salesData.map(data => data.date);
+                var branch1Orders = salesData.map(data => data.branch1);
+                var branch2Orders = salesData.map(data => data.branch2);
+                var branch3Orders = salesData.map(data => data.branch3);
+
+                ordersChart.data.labels = labels;
+                ordersChart.data.datasets[0].data = branch1Orders;
+                ordersChart.data.datasets[1].data = branch2Orders;
+                ordersChart.data.datasets[2].data = branch3Orders;
+                ordersChart.update();
             }
 
-            // Initial update
             updateDashboard($('#startDate').val(), $('#endDate').val(), $('#branch').val());
 
-            // Update on form submission
             $('form').on('submit', function (e) {
                 e.preventDefault();
                 updateDashboard($('#startDate').val(), $('#endDate').val(), $('#branch').val());
             });
-
-
-            let ordersByBranchChart;
-
-
         });
     </script>
 }
