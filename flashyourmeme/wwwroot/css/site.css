@@ -154,3 +154,41 @@ body {
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
 }
+
+.branch-status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.branch-status div:first-child {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.branch-status div:only-child {
+    background-color: #8C52FF;
+}
+
+.branch-status.offline div:first-child {
+    background-color: grey;
+}
+
+.progress {
+    flex-grow: 1;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+.modal-body img {
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 20px;
+    height: auto;
+    
+}
