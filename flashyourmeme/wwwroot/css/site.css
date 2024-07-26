@@ -35,6 +35,27 @@ html {
     border-radius: 20px;
 }
 
+.custom-preview-btn {
+    border: 2px solid #8C52FF;
+    border-radius: 20px;
+}
+
+.custom-preview-btn:hover {
+    background-color: #8C52FF;
+    color: white;
+}
+
+.custom-copylink-btn {
+    border: 2px solid #6CE5E8;
+    /*color: white;*/
+    border-radius: 20px;
+}
+
+.custom-copylink-btn:hover {
+    background-color: #6CE5E8;
+    color: white;
+}
+
 html {
   position: relative;
   min-height: 100%;

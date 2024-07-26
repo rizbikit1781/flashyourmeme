@@ -9,12 +9,17 @@
     <div class="card">
         <div class="card-body text-center">
             <table class="table">
-                <thead >
-                    <tr >
+                <thead>
+                    <tr>
                         <th class="align-content-center">No.</th>
                         <th class="align-content-center">Filter</th>
-                        <th class="align-content-center">File Name</th>
-                        <th class="align-content-center"><button type="submit" class="btn btn-outline-dark w-45"><i class="fa-sharp fa-solid fa-cloud-arrow-up"></i>Upload Filter</button></th>
+                        <th class="align-content-center">Filter Name</th>
+                        <th class="align-content-center">
+                            <button type="submit" class="btn btn-outline-dark w-45" data-bs-toggle="modal" data-bs-target="#uploadFilter">
+                                <i class="fa-sharp fa-solid fa-cloud-arrow-up"></i>
+                                Upload Filter
+                            </button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody class="align-middle">
@@ -52,6 +57,32 @@
                     }
                 </ul>
             </nav>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="uploadFilter" tabindex="-1" aria-labelledby="uploadFilterLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadFilterLabel">Upload Filter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" action="/your-upload-endpoint">
+                    <div class="mb-3">
+                        <label for="templateFilter" class="form-label">Filter Name</label>
+                        <input type="text" class="form-control" id="templateFilter" name="templateFilter" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="templateFile" class="form-label">Upload Filter</label>
+                        <input type="file" class="form-control" id="templateFile" name="templateFile" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary w-100">Upload</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

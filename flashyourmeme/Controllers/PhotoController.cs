@@ -20,7 +20,7 @@ namespace flashyourmeme.Controllers
                     Date = DateTime.Now.AddDays(-i),
                     Time = DateTime.Now.TimeOfDay,
                     Branch = "Branch " + (i % 3 + 1),
-                    PreviewUrl = "#",
+                    PreviewUrl = "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg",
                     LinkUrl = "#"
                 });
             }

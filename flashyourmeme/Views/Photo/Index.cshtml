@@ -62,8 +62,8 @@
                                     <td>@photo.Time.ToString(@"hh\:mm")</td>
                                     <td>@photo.Branch</td>
                                     <td>
-                                        <a href="@photo.PreviewUrl" class="btn btn-outline-primary">Preview</a>
-                                        <button class="btn btn-outline-success" onclick="copyLink('@photo.LinkUrl')">Copy Link</button>
+                                        <button type="button" class="btn custom-preview-btn" data-bs-toggle="modal" data-bs-target="#previewModal" data-preview-url="@photo.PreviewUrl">Preview</button>
+                                        <button class="btn custom-copylink-btn" onclick="copyLink('@photo.LinkUrl')">Copy Link</button>
                                     </td>
                                     <td>
                                         <button class="btn btn-danger btn-sm">Delete</button>
@@ -101,6 +101,24 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="previewModalLabel">Photo Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="previewImage" src="" alt="Photo Preview" class="img-fluid">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     function copyLink(link) {
         navigator.clipboard.writeText(link).then(function () {
@@ -109,4 +127,15 @@
             console.error('Could not copy link: ', err);
         });
     }
+
+    // Event listener to handle preview button clicks
+    document.addEventListener('DOMContentLoaded', function () {
+        var previewModal = document.getElementById('previewModal');
+        previewModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var previewUrl = button.getAttribute('data-preview-url');
+            var previewImage = document.getElementById('previewImage');
+            previewImage.src = previewUrl;
+        });
+    });
 </script>

@@ -249,6 +249,22 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\wwwroot\\template-1.png",
+      "PackagePath": "staticwebassets\\template-1.png"
+    },
+    {
+      "Id": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\wwwroot\\template-2.png",
+      "PackagePath": "staticwebassets\\template-2.png"
+    },
+    {
+      "Id": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\wwwroot\\template-3.png",
+      "PackagePath": "staticwebassets\\template-3.png"
+    },
+    {
+      "Id": "D:\\flashyourmeme\\flashyourmeme\\flashyourmeme\\wwwroot\\template-4.png",
+      "PackagePath": "staticwebassets\\template-4.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.flashyourmeme.props",
       "PackagePath": "build\\flashyourmeme.props"
     },
