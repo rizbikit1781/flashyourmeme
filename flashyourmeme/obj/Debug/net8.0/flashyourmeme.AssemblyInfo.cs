@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("flashyourmeme")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e170235ad66d410f6f42784e208cec87e262e6c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2504498ce3f3e08ea52c876d6d33349aaee24d88")]
 [assembly: System.Reflection.AssemblyProductAttribute("flashyourmeme")]
 [assembly: System.Reflection.AssemblyTitleAttribute("flashyourmeme")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

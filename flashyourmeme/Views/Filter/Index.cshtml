@@ -78,7 +78,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="templateFile" class="form-label">Upload Filter</label>
-                        <input type="file" class="form-control" id="templateFile" name="templateFile" required>
+                        <div class="custom-file-upload">
+                            <input type="file" class="form-control d-none" id="templateFile" accept="image/*" name="templateFile" required onchange="updateFileNameAndPreview()">
+                            <label for="templateFile" id="uploadLabel" class="upload-icon-label">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="img-b-preview">
+                        <img id="imagePreview" class="img-fluid text-center mt-3 d-none" alt="Image Preview">
                     </div>
                     <button type="submit" class="btn btn-secondary w-100">Upload</button>
                 </form>
@@ -92,5 +100,21 @@
         // Implement your delete functionality here.
         // For example, you might send an AJAX request to the server to delete the item.
         alert('Delete row with No: ' + no);
+    }
+
+    function updateFileNameAndPreview() {
+        var input = document.getElementById('templateFile');
+        var label = document.getElementById('uploadLabel');
+        var file = input.files[0];
+        var fileName = file.name;
+        label.innerHTML = fileName;
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = e.target.result;
+            imagePreview.classList.remove('d-none');
+        };
+        reader.readAsDataURL(file);
     }
 </script>

@@ -1,9 +1,10 @@
 ﻿namespace flashyourmeme.Models
 {
-    public class VoucherViewModel
+    public class TemplateViewModel
     {
-        public List<VoucherModel> Vouchers { get; set; }
+        public List<TemplateModel> Templates { get; set; }
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }
+
     }
 }

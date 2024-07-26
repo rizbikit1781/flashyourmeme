@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ImageModel>
+﻿@model IEnumerable<TemplateModel>
 
 @{
     ViewData["Title"] = "Template Overview";
@@ -51,15 +51,15 @@
 
             <div class="bg-white p-4">
                 <div class="row">
-                    @foreach (var image in Model)
+                    @foreach (var template in Model)
                     {
                         <div class="col-md-3 mb-4">
                             <div class="card">
-                                <img src="@Url.Content(image.ImageUrl)" class="card-img-top" alt="@image.Title">
+                                <img src="@Url.Content(template.ImageUrl)" class="card-img-top" alt="@template.Title">
                                 <div class="card-body text-center">
                                     <div class="text-start">
-                                        <h6>Set name: @image.Title</h6>
-                                        <p>File: @image.File</p>
+                                        <h6>Set name: @template.Title</h6>
+                                        <p>File: @template.File</p>
                                     </div>
                                     <button class="btn btn-dark me-2">Edit</button>
                                     <button class="btn btn-danger">Delete</button>
@@ -68,11 +68,37 @@
                         </div>
                     }
                 </div>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center mt-4">
+                        @if (ViewBag.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 })" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        }
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                            </li>
+                        }
+                        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 })" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
             </div>
 
         </div>
     </div>
-
 </div>
 
 <!-- Modal -->
@@ -91,7 +117,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="templateFile" class="form-label">Upload ZIP File</label>
-                        <input type="file" class="form-control" id="templateFile" name="templateFile" accept=".zip" required>
+                        <div class="custom-file-upload">
+                            <input type="file" class="form-control d-none" id="templateFile" name="templateFile" accept=".zip" required onchange="updateFileName()">
+                            <label for="templateFile" id="uploadLabel" class="upload-icon-label">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </label>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-secondary w-100">Upload</button>
                 </form>
@@ -99,3 +130,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    function updateFileName() {
+        var input = document.getElementById('templateFile');
+        var label = document.getElementById('uploadLabel');
+        var fileName = input.files[0].name;
+        label.innerHTML = fileName;
+    }
+</script>

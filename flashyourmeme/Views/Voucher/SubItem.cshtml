@@ -1,0 +1,64 @@
+﻿@model flashyourmeme.Models.SubItemViewModel
+
+@{
+    ViewData["Title"] = "Voucher for " + Model.BranchName;
+}
+
+<div class="container mt-4 min-vh-100">
+    <h1 class="display-4 text-center mb-4 fw-bold">@ViewData["Title"]</h1>
+
+    <div class="card">
+        <div class="card-body text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="align-content-center">No.</th>
+                        <th class="align-content-center">Event Name</th>
+                        <th class="align-content-center"><button type="submit" class="btn btn-outline-dark w-45"><i class="fa-solid fa-plus mx-2"></i>Creaet Voucher</button></th>
+                    </tr>
+                </thead>
+                <tbody class="align-middle">
+                    @if (Model.SubItems != null && Model.SubItems.Any())
+                    {
+                        foreach (var item in Model.SubItems)
+                        {
+                            <tr>
+                                <td>@item.No</td>
+                                <td>@item.EventName</td>
+                                <td>
+                                    <button type="button" class="btn btn-secondary" onclick="deleteItem(@item.No)">Show</button>
+                                    <button type="button" class="btn btn-danger" onclick="deleteItem(@item.No)">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center">No Sub Items available</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("SubItem", "Voucher", new { id = Model.VoucherId, page = i })">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    function deleteItem(no) {
+        // Implement your delete functionality here.
+        alert('Delete item with No: ' + no);
+    }
+</script>
