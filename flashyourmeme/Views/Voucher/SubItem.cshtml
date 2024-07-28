@@ -14,7 +14,11 @@
                     <tr>
                         <th class="align-content-center">No.</th>
                         <th class="align-content-center">Event Name</th>
-                        <th class="align-content-center"><button type="submit" class="btn btn-outline-dark w-45"><i class="fa-solid fa-plus mx-2"></i>Creaet Voucher</button></th>
+                        <th class="align-content-center">
+                            <button type="submit" class="btn btn-outline-dark w-45" data-bs-toggle="modal" data-bs-target="#createVoucher">
+                                <i class="fa-solid fa-plus mx-2"></i>Creaet Voucher
+                           </button>
+                        </th>
                     </tr>
                 </thead>
                 <tbody class="align-middle">
@@ -56,9 +60,68 @@
     </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="createVoucher" tabindex="-1" aria-labelledby="createVoucherLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createVoucherLabel">Create Voucher</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" action="/your-upload-endpoint">
+                    <div class="mb-3">
+                        <label for="voucherEventName" class="form-label">Event Name</label>
+                        <input type="text" class="form-control" id="voucherEventName" name="voucherEventName" required placeholder="Event Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="voucherDescription" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="voucherDescription" name="voucherDescription" required placeholder="Description">
+                    </div>
+                    <div class="mb-3">
+                        <label for="voucherCode" class="form-label">Code Redemption Limit</label>
+                        <input type="text" class="form-control" id="voucherCode" name="voucherCode" required placeholder="Number of uses allowed per code">
+                    </div>
+                    <div class="mb-3">
+                        <label for="voucherNo" class="form-label">Number of Code Generate</label>
+                        <input type="text" class="form-control" id="voucherNo" name="voucherNo" required placeholder="Number of uses allowed per code">
+                    </div>
+                    <div class="mb-3">
+                        <label for="voucherCodeLength" class="form-label">Code Length</label>
+                        <input type="text" class="form-control" id="voucherCodeLength" name="voucherCodeLength" required placeholder="The number of letters and digits in the code, e.g., ABC123 = 6.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="voucherExpireDate" class="form-label">Expiration date</label>
+                        <input type="text" class="form-control" id="voucherExpireDate" name="voucherExpireDate" required placeholder="Expiration date of the code">
+                    </div>
+                    <select class="form-select mb-3" id="charset" name="charset">
+                        <option selected disabled>Select Charset</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <select class="form-select mb-3" id="voucherTemplate" name="voucherTemplate">
+                        <option selected disabled>Select Voucher Template</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="submit" class="btn btn-primary ">Create</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-    function deleteItem(no) {
+    function deleteRow(no) {
         // Implement your delete functionality here.
-        alert('Delete item with No: ' + no);
+        // For example, you might send an AJAX request to the server to delete the item.
+        alert('Delete row with No: ' + no);
     }
 </script>

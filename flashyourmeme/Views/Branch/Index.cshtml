@@ -28,7 +28,7 @@
                                 <td>@item.BranchNames</td>
                                 <td>
                                     <button type="button" class="btn custom-gradient-btn" onclick="manage(@item.No)">Display</button>
-                                    <button type="button" class="btn custom-gradient-btn1" onclick="manage(@item.No)">Setting</button>
+                                    <button type="button" class="btn custom-gradient-btn1" data-bs-toggle="modal" data-bs-target="#branchSetting">Setting</button>
                                     <button type="button" class="btn btn-danger" style="border-radius: 20px;" onclick="manage(@item.No)">Delete</button>
 
                                 </td>
@@ -57,7 +57,106 @@
             </nav>
         </div>
     </div>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="branchSetting" tabindex="-1" aria-labelledby="branchSettingLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="branchSettingLabel">Setting</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" action="/your-upload-endpoint">
+                    <div class="row mb-3">
 
+                        <div class="col-md-4">
+                            <strong>Name</strong>
+                            <input type="text" class="form-control mt-2" id="templateFilter" name="templateFilter" required placeholder="Qottontale">
+                        </div>
+                        <div class="col-md-4">
+                            <strong>Price</strong>
+                            <input type="text" class="form-control mt-2" id="templateFilter" name="templateFilter" required placeholder="120 Bath"> 
+                        </div>
+                        <div class="col-md-4">
+                            <strong>Skip Payment</strong>
+                            <div class="form-check form-check-inline mt-2">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on">
+                                <label class="form-check-label" for="inlineRadio1">On</label>
+                            </div>
+                            <div class="form-check form-check-inline mt-2">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off">
+                                <label class="form-check-label" for="inlineRadio2">Off</label>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong>Branch Status</strong>
+                            <input type="text" class="form-control mt-2" id="templateFilter" name="templateFilter" required placeholder="Online">
+                        </div>
+                        <div class="col-md-4">
+                            <strong>Printer Status</strong>
+                            <input type="text" class="form-control mt-2" id="templateFilter" name="templateFilter" required placeholder="Ready">
+                        </div>
+                        <div class="col-md-4">
+                            <strong>Paper Available</strong>
+                            <input type="text" class="form-control mt-2" id="templateFilter" name="templateFilter" required placeholder="540/700">
+                        </div>
+                    </div>
+                    @* Printer Name *@
+                    <div class="mb-3">
+                        <label for="printerName" class="form-label" >Printer Name</label>
+                        <input type="text" class="form-control" id="printerName" name="printerName" required placeholder="DNP">
+                    </div>
+                    @* Public Key *@
+                    <div class="mb-3">
+                        <label for="printerName" class="form-label">Public Key</label>
+                        <input type="text" class="form-control" id="printerName" name="printerName" required placeholder="Pkey_sksdlfwjdsf">
+                    </div>
+                    @* Secret Key *@
+                    <div class="mb-3">
+                        <label for="printerName" class="form-label">Secret Key</label>
+                        <input type="password" class="form-control" id="printerName" name="printerName" required placeholder="*************">
+                    </div>
+                    @* User name *@
+                    <div class="mb-3">
+                        <label for="printerName" class="form-label">User name</label>
+                        <input type="text" class="form-control" id="printerName" name="printerName" required placeholder="Qottontale">
+                    </div>
+                    @* Password *@
+                    <div class="mb-3">
+                        <label for="printerName" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="printerName" name="printerName" required placeholder="12345678">
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-between mb-3">
+                        <div class="col-md-5">
+                            <label for="printerName" class="form-label">Screen Orientation</label>
+                            <select class="form-select mb-3" id="charset" name="charset">
+                                <option selected>Vertical</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Camera Position</label>
+                            <div class="form-check form-switch mt-2">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mirror</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary ">Save</button>
+                        <button type="submit" class="btn btn-danger ">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
